@@ -1,0 +1,404 @@
+/* Document */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  overflow: hidden;
+}
+
+a {
+  color: white;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* DAT GUI */
+
+#dat-gui {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10000;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "Minecraft-Regular";
+  src: url(/web/20220724170806im_/https://blockcraft.online/82ba08919dc2add9422f.otf);
+  font-display: fallback;
+}
+
+/* Main menu background image */
+
+.background-image {
+  filter: brightness(30%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(/web/20220724170806im_/https://blockcraft.online/bad86991aec944b4bd1b.png) center center repeat;
+  background-size: 128px;
+  background-repeat: repeat;
+  z-index: -1;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 200, 200, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 200, 200, 0.7);
+}
+
+/* CHAT INPUT */
+
+#chat-input {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  height: 35px;
+  width: calc(100% - 10px);
+  z-index: 2;
+  border: none;
+  font-family: url(/web/20220724170806im_/https://blockcraft.online/82ba08919dc2add9422f.otf);
+  padding-left: 5px;
+  text-decoration: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+#chat-input::placeholder {
+  color: white;
+}
+
+/* SEARCH INPUT */
+
+#search-input {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  height: 35px;
+  width: calc(100% - 10px);
+  z-index: 2;
+  border: none;
+  font-family: url(/web/20220724170806im_/https://blockcraft.online/82ba08919dc2add9422f.otf);
+  font-size: 1.8rem;
+  padding-left: 5px;
+  text-decoration: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+#search-input::placeholder {
+  color: grey;
+}
+
+/* CANVAS HUD */
+
+#canvas-hud {
+  position: absolute;
+  z-index: 4;
+  padding: 0;
+  margin: 0;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+}
+
+#hud-canvas {
+  position: absolute;
+  z-index: 0;
+  padding: 0;
+  margin: 0;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* CANVAS OVERLAY */
+#canvas-overlay {
+  position: absolute;
+}
+
+#account-overlay {
+  position: absolute;
+}
+
+/* LOADING SCREEN */
+
+#loading-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  transition: opacity 1500ms ease;
+  pointer-events: none;
+  font-family: "Minecraft-Regular";
+  color: white;
+}
+
+#loading-screen-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  transform: translate(-50%, -90%);
+  font-size: 2.2em;
+}
+
+#loading-screen-text {
+  text-align: center;
+}
+
+#progress-bar {
+  position: relative;
+  top: 30px;
+  z-index: 6;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: rgba(255, 255, 255, 1) solid 3px;
+  pointer-events: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#progress-bar-inner {
+  position: relative;
+  width: 0%;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 1);
+  pointer-events: none;
+}
+
+#progress-text {
+  position: relative;
+  top: 35px;
+  font-size: 0.5em;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.5s cubic-bezier(0.55, 0.17, 0.48, 0.82) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+input,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+/* ol,
+ul {
+  list-style: none;
+} */
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/*
+     FILE ARCHIVED ON 17:08:06 Jul 24, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 22:04:22 Oct 18, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.971
+  exclusion.robots: 0.039
+  exclusion.robots.policy: 0.019
+  esindex: 0.022
+  cdx.remote: 130.655
+  LoadShardBlock: 754.779 (3)
+  PetaboxLoader3.datanode: 1041.797 (4)
+  PetaboxLoader3.resolve: 195.538 (2)
+  load_resource: 1021.359
+*/
