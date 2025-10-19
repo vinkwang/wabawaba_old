@@ -45,7 +45,7 @@ button:hover {
 
 @font-face {
   font-family: "Minecraft-Regular";
-  src: url(/web/20220724170806im_/https://blockcraft.online/82ba08919dc2add9422f.otf);
+  src: url(https://wabawaba.org/Minecraft-Regular.otf);
   font-display: fallback;
 }
 
@@ -56,7 +56,7 @@ button:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url(/web/20220724170806im_/https://blockcraft.online/bad86991aec944b4bd1b.png) center center repeat;
+  background: url(https://wabawaba.org/menu_background.png) center center repeat;
   background-size: 128px;
   background-repeat: repeat;
   z-index: -1;
@@ -381,24 +381,3 @@ table {
   border-spacing: 0;
 }
 
-
-/*
-     FILE ARCHIVED ON 17:08:06 Jul 24, 2022 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 22:04:22 Oct 18, 2025.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  captures_list: 0.971
-  exclusion.robots: 0.039
-  exclusion.robots.policy: 0.019
-  esindex: 0.022
-  cdx.remote: 130.655
-  LoadShardBlock: 754.779 (3)
-  PetaboxLoader3.datanode: 1041.797 (4)
-  PetaboxLoader3.resolve: 195.538 (2)
-  load_resource: 1021.359
-*/
